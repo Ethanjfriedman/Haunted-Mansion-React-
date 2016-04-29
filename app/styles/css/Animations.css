@@ -1,0 +1,18 @@
+/* CSS to handle animations and pseudoclasses that cannot be applied via inline styles */
+@keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+.animateIn {
+  -webkit-animation: fadeIn 3s ease-in;
+  animation: fadeIn 3s ease-in;
+}
+
+button:hover {
+  -webkit-box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+  border-bottom: 10px solid darkred;
+  -webkit-filter: brightness(100%);
+}
