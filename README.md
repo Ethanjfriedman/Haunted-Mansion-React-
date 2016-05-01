@@ -14,7 +14,7 @@ To start run `npm run start-dev` to start in development mode
 
 ### TODO
 - Finish deployment so that project can be deployed to the Web with an Express server (need to set proper ENV vars for Babel).
-- In Game container, break Paragraphs and Keys out into their own components
+- ~~In Game container, break Paragraphs and Keys out into their own components~~ COMPLETED 4/30/16
 - Add in music
 - Use Redux to manage state so that the browser's 'back' and 'forward' buttons work properly
 - Add in a backend to save your progress in the game
