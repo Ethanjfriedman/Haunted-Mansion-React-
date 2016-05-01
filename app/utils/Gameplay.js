@@ -1,4 +1,4 @@
-//prefixes for cross-browser compatability
+// prefixes for cross-browser compatability
 export const speechRecognition = window.webkitSpeechRecognition ||
                                  window.mozSpeechRecognition    ||
                                  window.msSpeechRecognition     ||
@@ -8,10 +8,12 @@ export const speechRecognition = window.webkitSpeechRecognition ||
 // initializes and starts the speech recognition
 export const initRecognition = (obj) => {
   console.log('Initializing recognition');
-  //set up the speech recognition
-  //listen continuously
+
+  // set up the speech recognition
+  // listen continuously
   obj.state.recognition.continuous = true;
-  //if recognition stops (due to a timeout event), restart it
+
+  // if recognition stops (due to a timeout event), restart it
   obj.state.recognition.onend = function() {
     if (obj.state.story.inProgress) {
       console.log('restarting recognition');
@@ -19,12 +21,13 @@ export const initRecognition = (obj) => {
     }
   }
   console.log('starting to listen');
-  //start the recognition
+
+  // start the recognition
   obj.state.recognition.start();
 };
 
-//checks for a match between the word recognized and the available commands
-//if one is found returns the corresponding "action" (result)
+// checks for a match between the word recognized and the available commands
+// if one is found returns the corresponding "action" (result)
 export const checkForMatch = (commands, word, results) => {
   console.log("checking for match");
   for (let i = 0; i < commands.length; i++) {

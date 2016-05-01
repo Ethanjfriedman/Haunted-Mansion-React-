@@ -2,7 +2,8 @@ import React from 'react';
 import { game, content, dropCap, choicesDisplay, choicesFirstWord } from '../styles/Game';
 import { speechRecognition, checkForMatch, initRecognition, makeCommands } from '../utils/Gameplay';
 import Story from '../assets/story/Story';
-require('../styles/css/Animations.css');
+import Choices from '../components/Choices';
+import Narrative from '../components/Narrative';
 
 const Game = React.createClass({
   contextTypes: {
@@ -85,23 +86,11 @@ const Game = React.createClass({
     }
   },
   render: function() {
-    let paragraphs = this.state.story.scene.narrative.map(function(par) {
-      return <p key={par.split(' ').join('').slice(0,10)} className="animateIn">
-               <span style={dropCap}>{par.slice(0,1)}</span>
-               {par.slice(1)}
-             </p>
-    });
-    let choices = this.state.story.scene.fullChoices.map(function(c) {
-      return <p key={c.split(' ')[0]} className="animateIn">
-               <span style={choicesFirstWord}>{c.split(' ')[0]}</span>
-               {" " + c.split(' ').slice(1).join(' ')}
-             </p>
-    });
 
     return (
       <div style={game}>
-          {paragraphs}
-          {choices}
+          <Narrative narrative={this.state.story.scene.narrative} />
+          <Choices choices={this.state.story.scene.fullChoices} />
       </div>
     );
   }
