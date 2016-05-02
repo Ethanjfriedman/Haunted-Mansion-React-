@@ -5,8 +5,8 @@ require('../styles/css/Animations.css');
 
 export default (props) => {
   return (
-    <Link to="/game/opening">
-      <button style={button} className="animateIn">Start game</button>
+    <Link to={props.destination}>
+      <button style={button} className="animateIn">{props.buttonText}</button>
     </Link>
   );
 };
