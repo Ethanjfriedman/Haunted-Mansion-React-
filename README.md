@@ -19,4 +19,4 @@ To start run `npm run start-dev` to start in development mode
 - Add in music
 - Use Redux to manage state so that the browser's 'back' and 'forward' buttons work properly
 - Add in a backend to save your progress in the game
-
+- Add in React Native for mobile support
